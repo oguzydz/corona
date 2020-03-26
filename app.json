@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "Corona",
+    "slug": "Corona",
+    "privacy": "public",
+    "sdkVersion": "36.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#c70e2d"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.oguzydz.corona",
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-9786663498474045~9449136841"
+      },
+      "googleServicesFile": "./google-services.json",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.oguzydz.corona",
+      "permissions": []
+    }
+  }
+}

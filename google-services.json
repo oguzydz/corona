@@ -1,0 +1,41 @@
+{
+  "project_info": {
+    "project_number": "813195557237",
+    "firebase_url": "https://corona-f264c.firebaseio.com",
+    "project_id": "corona-f264c",
+    "storage_bucket": "corona-f264c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813195557237:android:7b9a0486a87eaedd307b3c",
+        "android_client_info": {
+          "package_name": "com.oguzydz.corona"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "813195557237-2k9hvakroq94hha47kp5v23i2t5h9pdk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN4rIQBVNzOpAqvU8fMM8K3Pa0iU19U18"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "813195557237-2k9hvakroq94hha47kp5v23i2t5h9pdk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-9786663498474045~9449136841"
+    }
+  ],
+  "configuration_version": "1"
+}
