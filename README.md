@@ -2,4 +2,4 @@
 It is about coronavirus.
 
 ## It is made using React Native via Expo client
-You can fidn android [demo](http://corona.oguzydz.me)
+You can find android app [demo](http://corona.oguzydz.me)
