@@ -28,9 +28,15 @@ export const fetch_data = async () => dispatch => {
     })
 }
 
-export const set_lang =  (lang) => {
+export const set_lang = (lang) => {
     return {
         type: actions.SET_LANG,
         payload: lang
+    }
+}
+
+export const set_close_menu = () => {
+    return {
+        type: actions.SET_CLOSE_MENU
     }
 }

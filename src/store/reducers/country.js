@@ -7,8 +7,8 @@ import { NativeModules, Platform } from 'react-native';
 
 
 const country = Platform.OS === 'ios' ?
-NativeModules.SettingsManager.settings.AppleLocale.slice(3, 5) :
-NativeModules.I18nManager.localeIdentifier.slice(3, 5)
+    NativeModules.SettingsManager.settings.AppleLocale.slice(3, 5) :
+    NativeModules.I18nManager.localeIdentifier.slice(3, 5)
 
 
 const initalState = {
@@ -40,6 +40,11 @@ const countryReducers = (state = initalState, action) => {
             return {
                 ...state,
                 menu: !state.menu
+            };
+        case actions.SET_CLOSE_MENU:
+            return {
+                ...state,
+                menu: false
             };
         case actions.SET_LANG:
             return {

@@ -33,14 +33,21 @@ import CountryMenu from '../../components/CountryMenu';
 import List from '../../components/CountryList';
 
 // Firebase import ediliyor.
-import { auth, db } from '../../firebase/index';
+import { auth, db, app } from '../../firebase/index';
+import { config } from '../../firebase/config';
+
 
 // Kullanıcı Cihaz Bilgileri
 import Constants from 'expo-constants';
 
+import { Notifications } from 'expo';
+import * as Permissions from 'expo-permissions';
+
+
 
 class HomeScreen extends Component {
 
+   
 
     styles = () => {
         if (this.props.theme === "light") {
@@ -63,17 +70,16 @@ class HomeScreen extends Component {
             "totalRecovered": "",
         },
         loading: false,
-      
+
     }
 
-  
 
 
-    
 
     componentDidMount = () => {
+        this.refreshData();
 
-        // this.refreshData();
+        this.props.set_close_menu();
 
         auth.signInAnonymously().then((user) => {
             if (user) {
@@ -91,19 +97,6 @@ class HomeScreen extends Component {
             console.log('firebase auth error: ' + error)
         })
 
-        // auth.onAuthStateChanged(function (user) {
-        //     if (user) {
-        //         const uid = user.uid
-        //         const userRef = db.ref("users/" + uid)
-        //         userRef.set({
-        //             deviceName: Constants.deviceName,
-        //             deviceYearClass: Constants.deviceYearClass,
-        //             homeScreenTime: store.getState().analytics.HomeScreenTime,
-        //             aboutScreenTime: store.getState().analytics.AboutScreenTime
-        //         })
-
-        //     }
-        // })
 
 
         this.focus = this.props.navigation.addListener('focus', () => {
@@ -122,20 +115,6 @@ class HomeScreen extends Component {
 
     }
 
-    onReceived(notification) {
-        console.log("Notification received: ", notification);
-    }
-
-    onOpened(openResult) {
-        console.log('Message: ', openResult.notification.payload.body);
-        console.log('Data: ', openResult.notification.payload.additionalData);
-        console.log('isActive: ', openResult.notification.isAppInFocus);
-        console.log('openResult: ', openResult);
-    }
-
-    onIds(device) {
-        console.log('Device info: ', device);
-    }
 
 
     fetchData = async () => {
@@ -435,7 +414,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         set_values: (values) => { dispatch(Cactions.set_values(values)) },
-        screen_time: (screen) => { dispatch(Aactions.screen_time(screen)) }
+        screen_time: (screen) => { dispatch(Aactions.screen_time(screen)) },
+        set_close_menu: () => {dispatch(Cactions.set_close_menu())}
     }
 }
 
